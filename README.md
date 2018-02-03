@@ -56,6 +56,35 @@ OR, start typing the prefix for an element and hit `ctrl+space` to fuzzy search 
 </dom-module>
 ```
 
+### [pecb] polymer element with ES6 Class (Polymer 2)
+
+_Note:_ the `${1}` var is transformed to camelCase where appropriate.
+
+```html
+<dom-module id="${1}">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+  </template>
+  <script>
+    class ${1} extends Polymer.Element {
+      static get is() {
+        return '${1}';
+      }
+
+      static get properties() {
+        return {};
+      }
+    }
+
+    customElements.define(${1}.is, ${1});
+  </script>
+</dom-module>
+```
+
 ### [hi] html import *(I use this one a lot)*
 
 ```html

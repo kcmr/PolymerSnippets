@@ -1,0 +1,29 @@
+<snippet>
+  <content><![CDATA[
+<dom-module id="${1}">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+  </template>
+  <script>
+    class ${1/^(\w)|(?:-(\w))/(?1$1:)(?2\u$2:)/g} extends Polymer.Element {
+      static get is() {
+        return '${1}';
+      }
+
+      static get properties() {
+        return {};
+      }
+    }
+
+    customElements.define(${1/^(\w)|(?:-(\w))/(?1$1:)(?2\u$2:)/g}.is, ${1/^(\w)|(?:-(\w))/(?1$1:)(?2\u$2:)/g});
+  </script>
+</dom-module>
+]]></content>
+  <tabTrigger>pecb</tabTrigger>
+  <scope>text.html</scope>
+  <description>polymer 2 element (ES6 Class)</description>
+</snippet>
